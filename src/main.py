@@ -40,6 +40,8 @@ def main():
         ball.update_pos(screen)
         pygame.display.flip()
 
+        ball.check_collison(pLeft, pRight)
+
         clock.tick(30)
 
 if __name__ == "__main__":
