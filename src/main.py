@@ -1,4 +1,5 @@
 import sys, pygame
+sys.dont_write_bytecode = True
 from classes.paddle import Paddle
 from classes.ball import Ball
 pygame.init()
