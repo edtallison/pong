@@ -1,5 +1,5 @@
 # Good ol Pong, made using Python and Pygame
-I made this so I could practice my Python and Object Orientation
+I made this so I could practice my Python and Object Orientation skills.
 
 ### Screenshot of my Pong game in action
 <p align="let">
