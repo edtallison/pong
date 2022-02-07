@@ -1,6 +1,7 @@
 import pygame
+from classes.object import Object
 
-class Paddle:
+class Paddle(Object):
     def __init__(self, x_pos, screen_height, colour):
         self.height = 200
         self.x_pos = x_pos
@@ -17,6 +18,3 @@ class Paddle:
             
         if self.y_pos < (self.screen_height - self.height):
             self.y_pos += down * 10
-
-    def update_pos(self, screen):
-        screen.blit(self.surf, (self.x_pos,self.y_pos))

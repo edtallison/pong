@@ -1,6 +1,7 @@
 import pygame
+from classes.object import Object
 
-class Ball:
+class Ball(Object):
     def __init__(self, width, height, colour):
         self.dim = 30
         self.size = (self.dim, self.dim)
@@ -13,6 +14,3 @@ class Ball:
     def move(self):
         self.x_pos += 10
         self.y_pos -= 10
-
-    def update_pos(self, screen):
-        screen.blit(self.surf, (self.x_pos,self.y_pos))
