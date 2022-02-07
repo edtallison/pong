@@ -29,7 +29,21 @@ class Ball(Object):
         # Check if the ball collides with either paddle
         if ((self.x_pos < x1) and ((self.y_pos > y1a) and ((self.y_pos + self.dim) < y1b)))     or     (((self.x_pos + self.dim) > x2) and (self.y_pos > y2a) and ((self.y_pos + self.dim) < y2b)):
             self.horizontal *= -1
+
+        # Don't allow the ball to change direction once it is behind a paddle
+        if self.x_pos < p1.x_pos:
+            self.horizontal = -1
+        elif self.x_pos + self.dim > p2.x_pos + p2.width:
+            self.horizontal = 1
     
+    def check_win(self, screen_width):
+        if (self.x_pos < 0):
+            print("Right wins!")
+            return True
+        elif (self.x_pos > screen_width):
+            print("Left wins!")
+            return True
+
     def move(self, p1, p2):
         self.check_collison(p1, p2)
         self.x_pos += self.horizontal * 10

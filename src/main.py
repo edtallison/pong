@@ -20,12 +20,14 @@ def main():
     # Add clock/time to smooth out framerate
     clock = pygame.time.Clock()
 
+    gaming = True
     # Game loop
-    while 1:
+    while gaming:
         # Lets the user close the game
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                     sys.exit()
+
         # Get key presses from user
         keys = pygame.key.get_pressed()
 
@@ -39,6 +41,9 @@ def main():
         pRight.update_pos(screen)
         ball.update_pos(screen)
         pygame.display.flip()
+
+        if ball.check_win(width):
+            sys.exit()
 
         clock.tick(30)
 
