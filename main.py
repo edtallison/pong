@@ -1,7 +1,7 @@
 import sys, pygame
 pygame.init()
 
-size = width, height = 1200, 800
+size = width, height = 1500, 800
 screen = pygame.display.set_mode(size)
 pygame.display.set_caption("Pong!")
 
@@ -10,21 +10,26 @@ white = (255,255,255)
 
 class player:
     def __init__(self, x_pos):
+        self.height = 200
         self.x_pos = x_pos
-        self.y_pos = 300
+        self.y_pos = (height / 2) - (self.height / 2)
         # Create the rectangle to be drawn on the screen
-        self.surf = pygame.Surface((50, 200))
+        
+        self.surf = pygame.Surface((50, self.height))
         self.surf.fill(white)
 
     def move(self, up, down):
-        self.y_pos -= up * 10
-        self.y_pos += down * 10
+        if self.y_pos > 0:
+            self.y_pos -= up * 10
+            
+        if self.y_pos < (height - self.height):
+            self.y_pos += down * 10
 
     def update_pos(self):
         screen.blit(self.surf, (self.x_pos,self.y_pos))
 
 pLeft = player(100)
-pRight = player(1050)
+pRight = player(width - 150)
 
 # Add clock/time to smooth out framerate
 clock = pygame.time.Clock()
