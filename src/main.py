@@ -1,5 +1,6 @@
 import sys, pygame
-from classes.classes import Paddle, Ball
+from classes.paddle import Paddle
+from classes.ball import Ball
 pygame.init()
 
 size = width, height = 1200, 800
