@@ -31,7 +31,7 @@ def main():
 
         pLeft.move(keys[pygame.K_w], keys[pygame.K_s])
         pRight.move(keys[pygame.K_UP], keys[pygame.K_DOWN])
-        ball.move()
+        ball.move(pLeft, pRight)
 
         # Update screen with positions of paddles
         screen.fill(black)
@@ -39,8 +39,6 @@ def main():
         pRight.update_pos(screen)
         ball.update_pos(screen)
         pygame.display.flip()
-
-        ball.check_collison(pLeft, pRight)
 
         clock.tick(30)
 

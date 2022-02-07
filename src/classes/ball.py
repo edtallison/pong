@@ -26,9 +26,11 @@ class Ball(Object):
         x1, y1a, y1b = p1.x_pos + p1.width, p1.y_pos, p1.y_pos + p1.height
         x2, y2a, y2b = p2.x_pos, p2.y_pos, p2.y_pos + p2.height
 
+        # Check if the ball collides with either paddle
         if ((self.x_pos < x1) and ((self.y_pos > y1a) and ((self.y_pos + self.dim) < y1b)))     or     (((self.x_pos + self.dim) > x2) and (self.y_pos > y2a) and ((self.y_pos + self.dim) < y2b)):
             self.horizontal *= -1
     
-    def move(self):
+    def move(self, p1, p2):
+        self.check_collison(p1, p2)
         self.x_pos += self.horizontal * 10
         self.y_pos -= self.vertical * 10
