@@ -9,8 +9,8 @@ class Paddle(Object):
         self.y_pos = (self.screen_height / 2) - (self.height / 2)
         
         # Create the rectangle to be drawn on the screen
-        self.width = 50
-        self.surf = pygame.Surface((self.width, self.height))
+        width = 50
+        self.surf = pygame.Surface((width, self.height))
         self.surf.fill(colour)
 
     def move(self, up, down):
