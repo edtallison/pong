@@ -2,7 +2,7 @@
 I made this so I could practice my Python and Object Orientation skills.
 
 ### Screenshot of my Pong game in action:
-<p align="let">
+<p>
   <img src="img/pong_ss.png" width="500" title="hover text">
 </p>
 
